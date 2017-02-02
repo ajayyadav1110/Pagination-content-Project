@@ -1,6 +1,7 @@
 
 
 
+/*variable declaration globally---------->*/
 var allstudentitem=$('.student-item');
 var allstudentsearch ='<div class="allstudentsearch"><input id="search" placeholder="Search for students"><button>Search</button></div>';
 var pagination ='<div class="pagination"><ul></ul></div>';
@@ -38,7 +39,7 @@ return pagearray;
           function pagebutton(pagelist){
              $('.page').append(pagination);
                var nopages=pagelist.length;
-        for(var i=0;i<=nopages;i++){
+        for(var i=1;i<=nopages;i++){
             var buttons='<li><a href="#">'+i+'</a></li>';
                $('.pagination ul').append(buttons);
                  }
@@ -52,7 +53,9 @@ return pagearray;
           event.preventDefault();
          });
        }
-// Search function finds both name and/or email. If no results are found, change the header H2 to display No Results, otherwise display default Students title. On firing of the searchList, check input value to see if matches, if there are matches, generate the new student array & display appropriate list of buttons.
+/* Search function finds both name and/or email. If no results are found, change the header H2 to display No Results, 
+otherwise display default Students title. On firing of the searchList, check input value to see if matches, 
+if there are matches, generate the new student array & display appropriate list of buttons.*/
 function searchlist() {	
     var searchrule = $('#search').val().toLowerCase().trim();
 
